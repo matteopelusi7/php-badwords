@@ -8,8 +8,13 @@ dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola d
 
 <?php 
 
+$text = $_GET['censura'];
+
 $paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sequi deserunt vero voluptates. Qui, exercitationem suscipit omnis totam error ducimus quibusdam repellat maxime saepe reprehenderit id doloremque corrupti iusto? Consectetur.';
 $length = strlen($paragraph);
+
+$new_text = str_replace($text, '***', $paragraph);
+$new_length = strlen($new_text);
 
 ?>
 
@@ -25,6 +30,9 @@ $length = strlen($paragraph);
     
     <p> <?php echo $paragraph ?> </p>
     <p>La lunghezza del testo è <?php echo $length?> </p>
+
+    <p> <?php echo $new_text ?> </p>
+    <p>La lunghezza del testo è <?php echo $new_length?> </p>
 
 </body>
 </html>
